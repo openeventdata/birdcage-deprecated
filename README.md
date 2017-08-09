@@ -6,25 +6,32 @@ BIRDCAGE is a distributed framework for generating event codings with geolocatio
 # Installation
 - Required Python version: Python 2.7.X    
 - Biryani 
+
       git clone -b kalman_filter_all_anno https://github.com/oudalab/biryani
 
 - Mordecai 
-    git clone https://github.com/openeventdata/mordecai.git
+ 
+      git clone https://github.com/openeventdata/mordecai.git
   
 - PETRARCH 
-    pip install git+https://github.com/openeventdata/petrarch2.git
+    
+      pip install git+https://github.com/openeventdata/petrarch2.git
 
 - Celery
-    pip install -U Celery
+    
+      pip install -U Celery
 
 - Birdcage 
-    git clone https://github.com/openeventdata/birdcage.git
+    
+      git clone https://github.com/openeventdata/birdcage.git
 
 - MongoDB
-   Install MongoDB from https://docs.mongodb.com/manual/administration/install-on-linux/
+   
+      Install MongoDB from https://docs.mongodb.com/manual/administration/install-on-linux/
 
 - RabbitMQ
-   Install RabbitMQ grom https://www.rabbitmq.com/install-debian.html  
+   
+      Install RabbitMQ grom https://www.rabbitmq.com/install-debian.html  
 
 
 # Work flow
