@@ -5,10 +5,11 @@ BIRDCAGE is a distributed framework for generating event codings with geolocatio
 
 # Installation
 
-- Biryani installation
-- Mordecai installation
-- Celery installation
-- Birdcage installation
+- Biryani 
+- Mordecai 
+- PETRARCH 
+- Celery 
+- Birdcage 
 
 # Work flow
 
