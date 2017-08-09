@@ -6,11 +6,20 @@ BIRDCAGE is a distributed framework for generating event codings with geolocatio
 # Installation
 
 - Biryani 
-- Mordecai 
-- PETRARCH 
-- Celery 
-- Birdcage 
+      git clone -b kalman_filter_all_anno https://github.com/oudalab/biryani
 
+- Mordecai 
+    git clone https://github.com/openeventdata/mordecai.git
+  
+- PETRARCH 
+    pip install git+https://github.com/openeventdata/petrarch2.git
+
+- Celery
+    pip install -U Celery
+
+- Birdcage 
+    
+    
 # Work flow
 
 - Running Biryani & generating CoreNLP output
