@@ -37,6 +37,25 @@ BIRDCAGE is a distributed framework for generating event codings with geolocatio
 # Work flow
 
 - Running Biryani & generating CoreNLP output
+      Install all dependencies mentioned in https://github.com/oudalab/biryani.
+
+      Biryani processes raw news articles and uses CoreNLP to generate annotated text. It uses RabbitMQ for messaging. It has a producer (producer.py) that reads news articles and sends it to RabbitMQ. A news article may be in raw text format or xml format (e.g., Gigaword Dataset). Biryani expects the following JSON format for a news article/document:
+
+                  {"news_source": doc['news_source'],
+                         "article_title": doc['article_title'],
+                         "publication_date": doc['publication_date'],
+                         "date_added": datetime.datetime.utcnow(),
+                         "article_body": doc['article_body'],
+                         "stanford": 0,
+                         "language": doc['language'],
+                         "doc_id": doc['doc_id'],
+                         'word_count': doc['word_count'],
+                         'dateline': doc['dateline'],
+                         'type': doc['type']
+                  }
+
+       We have to write our own document parsing logic if they are not in XML or JSON format in producer.py. You will find a sample producer gigaword_loader.py which processes Gigaword AFP dataset (XML format).
+
 - Running Mordecai as a standalone server
 - Running Celery task in background
 - Running Birdcase and store events in MongoDB
