@@ -1,11 +1,12 @@
 __author__ = 'root'
 
 from pymongo import MongoClient
-import ujson
-import json
+from Config import Config
+
+uri = Config.get_mongo_db_url()
+client = MongoClient(uri)
 
 
-client = MongoClient('localhost:27017')
 db = client.Articles
 
 

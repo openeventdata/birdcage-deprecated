@@ -2,12 +2,13 @@ __author__ = 'root'
 
 import json
 import requests
-
+from Config import Config
 def get_geo_location(articleText):
     data = dict()
     data['text'] = articleText
     data = json.dumps(data)
-    url = 'http://localhost:5006/places'
+    url = Config().get_mordecai_url()
+
     headers = {'Content-Type': 'application/json'}
 
     try:

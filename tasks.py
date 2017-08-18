@@ -3,18 +3,11 @@ from EventCoder import EventCoder
 from encode_with_petrarch import code_articles, code_articles_
 from sqlite_client import SqliteClient
 from mongo_client import insert
+from Config import Config
 
-app = Celery('tasks', broker='pyamqp://guest@localhost//', backend='mongodb://localhost:27017/jobs')
+celery_uri = Config.get_rabbit_mq_celeru_url()
 
-
-@app.task
-def add(x, y):
-    return x + y
-
-
-@app.task
-def process(message, petrGlobals={}):
-    return code_articles_(message, petrGlobals)
+app = Celery('tasks', broker=celery_uri)
 
 
 @app.task

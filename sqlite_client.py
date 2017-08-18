@@ -1,12 +1,12 @@
 __author__ = 'root'
 
 import sqlite3 as lite
-import sys
+from Config import Config
 
 
 class SqliteClient:
     def __init__(self):
-        self.db_path = 'data/test_solaimani_new.db'
+        self.db_path = Config.get_sqlite_path()
 
 
     def read_data(self, query):
@@ -36,12 +36,3 @@ class SqliteClient:
 
 
 
-sqlite_c = SqliteClient()
-#print sqlite_c.read_data('select count(*) as count from json_test_table')[0]['count']
-print sqlite_c.read_data('select * from json_test_table limit 2')
-
-#i = 1230
-#print sqlite_c.read_data('select mongo_id from json_test_table limit 1228, 10')
-#print sqlite_c.read_data('select mongo_id from json_test_table limit 1228, 3')
-#print sqlite_c.read_data('select mongo_id from json_test_table limit 1231, 3')
-#print sqlite_c.read_data('select mongo_id from json_test_table limit 1234, 3')
