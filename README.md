@@ -116,5 +116,21 @@ Open `sqlite_client.py` file and change the appropriate location of CoreNLP outp
       python celery_test.py
 ```
 
-  You will see asynchronous jobs are performing in Celery commandline console (it starts when you run celery tasks). Finally all output will be stored in MongoDB. You will find it in your MongoDB's 'Article' collection. Each news article in MongoDB has encoded event with their Geolocation, actors, etc. 
 
+You will see asynchronous jobs are performing in Celery commandline console (it starts when you run celery tasks). Finally all output will be stored in MongoDB. You will find it in your MongoDB's 'Article' collection. Each news article in MongoDB has encoded event with their Geolocation, actors, etc. 
+
+ How Celery works?
+ 
+ Celery has two components. First, A worker logic, where we write the processing code. 
+
+```
+      celery -A tasks worker --loglevel=info      
+```
+
+ Second, A driver program, from where we decide the number of workers with their processing logic. 
+ 
+ ```
+      python celery_test.py
+```
+
+In celery_test.py, we call how many workers will be run asynchronously in background.
