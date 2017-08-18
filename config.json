@@ -1,0 +1,21 @@
+{
+    "mongodb":{
+        "host":"localhost",
+        "user":"",
+        "password":"",
+        "admin-db":"admin",
+        "port" : ""
+    },
+    "rabbit-mq":{
+       "host":"localhost",
+       "user":"guest",
+       "password":"",
+       "port" : ""
+    },
+    "sqlite":{
+          "db-path":"./data/sqlite_db_path.db"
+      },
+    "mordecai":{
+      "url" : "http://localhost:5006/places"
+    }
+}
