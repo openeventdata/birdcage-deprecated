@@ -6,7 +6,8 @@ from Config import Config
 
 class SqliteClient:
     def __init__(self):
-        self.db_path = Config.get_sqlite_path()
+        config = Config()
+        self.db_path = config.get_sqlite_path()
 
 
     def read_data(self, query):

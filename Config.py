@@ -88,10 +88,22 @@ class Config:
         if 'sqlite' in self.data:
             db_path = self.data['sqlite']['db-path']
 
+        return db_path
+
+    def get_mongo_sqlitedb_path(self):
+        db_path = ''
+
+        if self.data is None:
+            raise Exception('Configuration file is missing')
+
+        # broker='pyamqp://boomer:burritos_for_breakfast@localhost//
+        if 'sqlite' in self.data:
+            db_path = self.data['sqlite']['mongo-to-sqlitedb-path']
 
         return db_path
 
 
-c = Config()
-print c.get_sqlite_path()
+
+#c = Config()
+#print c.get_mongo_db_url()
 

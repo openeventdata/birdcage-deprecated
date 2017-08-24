@@ -1,5 +1,5 @@
 __author__ = 'root'
-from tasks import process_new,add
+from tasks import process_new
 from sqlite_client import SqliteClient
 
 

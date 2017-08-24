@@ -5,7 +5,8 @@ from sqlite_client import SqliteClient
 from mongo_client import insert
 from Config import Config
 
-celery_uri = Config.get_rabbit_mq_celeru_url()
+config = Config()
+celery_uri = config.get_rabbit_mq_celeru_url()
 
 app = Celery('tasks', broker=celery_uri)
 
