@@ -1,0 +1,29 @@
+version: '2'
+services:
+    rabbit:
+        hostname: rabbit
+        image: rabbitmq:latest
+        environment:
+            - RABBITMQ_DEFAULT_USER=guest
+            - BROKER_POOL_LIMIT = 0
+            - RABBITMQ_DEFAULT_PASS=test
+        ports:
+            - "5673:5672"
+
+    worker:
+        build:
+            context: .
+            dockerfile: dockerfile
+        volumes:
+            - .:/app
+        links:
+            - rabbit
+            - mongo
+        depends_on:
+            - rabbit
+            - mongo  
+    mongo:
+        hostname: mongo
+        image: mongo:latest
+        ports:
+            - "27018:27017"

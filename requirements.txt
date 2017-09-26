@@ -1,0 +1,3 @@
+celery==4.1.0
+requests
+pymongo==3.4.0

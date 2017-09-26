@@ -1,0 +1,21 @@
+{
+    "mongodb":{
+        "host":"localhost",
+        "user":"",
+        "password":"",
+        "admin-db":"admin",
+        "port" : "27018"
+    },
+    "rabbit-mq":{
+       "host":"localhost",
+       "user":"guest",
+       "password":"test",
+       "port" : "5673"
+    },
+    "sqlite":{
+          "db-path":"./test_celery/data/test_solaimani_new.db"
+      },
+    "mordecai":{
+      "url" : "http://localhost:5006/places"
+    }
+}
